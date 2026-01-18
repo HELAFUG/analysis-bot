@@ -17,8 +17,12 @@ class LoggingConfig(BaseModel):
     datefmt: str = "%Y-%m-%d %H:%M:%S"
 
 
+class InfuraAPIConfig(BaseModel):
+    api_key: str = getenv("INFURA_API_KEY", "")
+
+
 class Web3Config(BaseModel):
-    pass
+    infura_api: InfuraAPIConfig = InfuraAPIConfig()
 
 
 class Settings(BaseSettings):
