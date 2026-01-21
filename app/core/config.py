@@ -20,6 +20,10 @@ class LoggingConfig(BaseModel):
 class InfuraAPIConfig(BaseModel):
     api_key: str = getenv("INFURA_API_KEY", "")
 
+    @property
+    def url(self):
+        return f"https://mainnet.infura.io/v3/{self.api_key}"
+
 
 class Web3Config(BaseModel):
     infura_api: InfuraAPIConfig = InfuraAPIConfig()
