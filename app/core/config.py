@@ -29,10 +29,15 @@ class Web3Config(BaseModel):
     infura_api: InfuraAPIConfig = InfuraAPIConfig()
 
 
+class DBConfig(BaseModel):
+    url: str = getenv("DB_URL", "sqlite:///analysis_bot.db")
+
+
 class Settings(BaseSettings):
     bot: BotConfig = BotConfig()
     logging: LoggingConfig = LoggingConfig()
     web3: Web3Config = Web3Config()
+    db: DBConfig = DBConfig()
 
 
 settings = Settings()
