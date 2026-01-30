@@ -1,5 +1,5 @@
 from aiogram import Bot, Dispatcher
-from router import router
+from handlers.router import router
 
 
 async def run(settings):
