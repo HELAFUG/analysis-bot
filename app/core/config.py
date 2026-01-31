@@ -34,11 +34,20 @@ class DBConfig(BaseModel):
     echo: bool = False
 
 
+class TonWalletConfig(BaseModel):
+    TON_CONNECT_MANIFEST = {
+        "url": "t.me/cryptoronews_bot",  # or t.me/yourbot
+        "name": "Crypto Analysis Bot",
+        "iconUrl": "https://your-icon-url.png",
+    }
+
+
 class Settings(BaseSettings):
     bot: BotConfig = BotConfig()
     logging: LoggingConfig = LoggingConfig()
     web3: Web3Config = Web3Config()
     db: DBConfig = DBConfig()
+    ton_wallet: TonWalletConfig = TonWalletConfig()
 
 
 settings = Settings()
