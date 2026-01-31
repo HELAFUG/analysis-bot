@@ -16,20 +16,19 @@ router.include_routers(
 
 @router.message(CommandStart())
 async def start(message: Message):
-    text = (
-        "✨ **Welcome to Crypto Analysis Bot** ✨\n\n"
-        "🚀 Your powerful crypto companion\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-        "📌 **Available Commands**\n\n"
-        "💎  /top10     → Top 10 cryptocurrencies by market cap\n"
-        "📊  /signal    → Get trading signal (e.g. <code>/signal bitcoin</code>)\n"
-        "⛽  /gas       → Current Ethereum gas prices\n"
-        "💰  /price     → Real-time price of any coin (new!)\n"
-        "📈  /rsi       → 14-period RSI analysis (new!)\n"
-        "🔐  /addwallet → Connect your ETH wallet\n"
-        "💼  /balance   → Check your wallet balance\n\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Start exploring with /top10 or try /signal btc 🔥"
+    welcome_text = (
+        "<b>✦ Crypto Analysis Bot ✦</b>\n\n"
+        "Real-time crypto data • TON wallet integration\n\n"
+        "💎 <b>Core Commands</b>\n"
+        "  /top10          Top 10 by market cap\n"
+        "  /signal [coin]  Trading signal\n"
+        "  /price [coin]   Current price\n"
+        "  /rsi [coin]     14-day RSI\n\n"
+        "🌐 <b>TON Wallet</b>\n"
+        "  /connectwallet  Connect (@wallet, Tonkeeper…)\n"
+        "  /balance        Check TON balance\n"
+        "  /disconnect     Log out wallet\n\n"
+        "<i>Start with /top10 or /connectwallet</i> • <code>/signal ton</code>"
     )
 
-    await message.answer(text, parse_mode="Markdown")
+    await message.answer(welcome_text, parse_mode="HTML")
