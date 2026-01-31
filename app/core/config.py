@@ -31,6 +31,7 @@ class Web3Config(BaseModel):
 
 class DBConfig(BaseModel):
     url: str = getenv("DB_URL", "sqlite:///analysis_bot.db")
+    echo: bool = False
 
 
 class Settings(BaseSettings):
