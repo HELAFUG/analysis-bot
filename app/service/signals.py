@@ -1,5 +1,7 @@
 # services/signals.py
-from typing import List, Tuple
+from typing import Tuple
+
+import numpy as np
 
 from service.coingecko import get_coin_price_history  # assuming this function exists
 
@@ -18,8 +20,6 @@ def calculate_rsi(coin_id: str, period: int = 14) -> float:
         raise ValueError(
             f"Insufficient price data for {coin_id} (got {len(prices)} points, need at least {period + 1})"
         )
-
-    import numpy as np
 
     # Calculate price changes
     deltas = np.diff(prices)
@@ -138,7 +138,7 @@ def simple_macd_signal(
     macd_line = ema_fast - ema_slow
 
     # Very crude signal line
-    macd_values = []  # would need historical MACD in real impl
+    macd_values = []  # would need historical MACD in real impl  # pyright: ignore[reportUnusedVariable, reportUnusedVariable, reportUnusedVariable, reportUnusedVariable, reportUnusedVariable, reportUnusedVariable]
     # ... skipped for simplicity
 
     return "MACD not fully implemented yet"

@@ -18,17 +18,13 @@ router.include_routers(
 async def start(message: Message):
     welcome_text = (
         "<b>✦ Crypto Analysis Bot ✦</b>\n\n"
-        "Real-time crypto data • TON wallet integration\n\n"
+        "Real-time crypto data • \n\n"
         "💎 <b>Core Commands</b>\n"
         "  /top10          Top 10 by market cap\n"
         "  /signal [coin]  Trading signal\n"
         "  /price [coin]   Current price\n"
         "  /rsi [coin]     14-day RSI\n\n"
-        "🌐 <b>TON Wallet</b>\n"
-        "  /connectwallet  Connect (@wallet, Tonkeeper…)\n"
-        "  /balance        Check TON balance\n"
-        "  /disconnect     Log out wallet\n\n"
-        "<i>Start with /top10 or /connectwallet</i> • <code>/signal ton</code>"
+        "<i>Start with /top10 or• <code>/signal ton</code>"
     )
 
     await message.answer(welcome_text, parse_mode="HTML")
